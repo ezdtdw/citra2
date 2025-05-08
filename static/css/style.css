@@ -1,0 +1,373 @@
+/* Mengatur gaya dasar untuk body */
+body {
+    background: linear-gradient(135deg, #8a4baf, #c590e8); /* Latar belakang gradien */
+    min-height: 100vh; /* Tinggi minimum 100% dari viewport */
+    display: flex; /* Menggunakan flexbox untuk tata letak */
+    flex-direction: column; /* Elemen disusun secara vertikal */
+    font-family: 'Segoe UI', Arial, sans-serif; /* Font utama */
+    color: #333; /* Warna teks default */
+    margin: 0; /* Menghapus margin default */
+    padding: 0; /* Menghapus padding default */
+}
+
+/* Gaya untuk navbar */
+.navbar {
+    background: transparent !important; /* Navbar transparan */
+    padding: 1rem 2rem; /* Padding di dalam navbar */
+}
+
+/* Gaya untuk merek navbar */
+.navbar-brand {
+    color: white !important; /* Warna teks putih */
+    font-size: 1.5rem; /* Ukuran font besar */
+    font-weight: 500; /* Ketebalan font sedang */
+}
+
+/* Gaya untuk link di navbar */
+.nav-link {
+    color: rgba(255, 255, 255, 0.9) !important; /* Warna teks putih dengan transparansi */
+    margin: 0 1rem; /* Margin horizontal */
+}
+
+/* Kontainer utama */
+.main-container {
+    display: flex; /* Menggunakan flexbox */
+    flex-direction: column; /* Elemen disusun secara vertikal */
+    align-items: center; /* Elemen disejajarkan di tengah secara horizontal */
+    justify-content: flex-start; /* Elemen dimulai dari atas */
+    padding: 2rem; /* Padding di dalam kontainer */
+    max-width: 1200px; /* Lebar maksimum */
+    margin: 0 auto; /* Pusatkan kontainer */
+    text-align: center; /* Teks rata tengah */
+}
+
+/* Bagian hero */
+.hero-section {
+    margin: 2rem 0 4rem 0; /* Margin atas dan bawah */
+    width: 100%; /* Lebar penuh */
+}
+
+/* Judul utama */
+.main-title {
+    color: #1d1b1b; /* Warna teks gelap */
+    font-size: 4rem; /* Ukuran font besar */
+    font-weight: 600; /* Ketebalan font tebal */
+    margin-bottom: 3rem; /* Margin bawah */
+    line-height: 1.2; /* Jarak antar baris */
+}
+
+/* Kartu untuk unggah file */
+.upload-card {
+    background: white; /* Latar belakang putih */
+    border-radius: 20px; /* Sudut membulat */
+    padding: 3rem; /* Padding di dalam kartu */
+    width: 100%; /* Lebar penuh */
+    max-width: 800px; /* Lebar maksimum */
+    margin: 0 auto; /* Pusatkan kartu */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+}
+
+/* Zona unggah file */
+.upload-zone {
+    border: 2px dashed #ddd; /* Garis putus-putus */
+    border-radius: 15px; /* Sudut membulat */
+    padding: 3rem; /* Padding di dalam zona */
+    margin: 2rem 0; /* Margin atas dan bawah */
+    background: white; /* Latar belakang putih */
+    cursor: pointer; /* Ubah kursor menjadi pointer */
+    transition: all 0.3s ease; /* Animasi transisi */
+    display: flex; /* Menggunakan flexbox */
+    flex-direction: column; /* Elemen disusun secara vertikal */
+    align-items: center; /* Elemen disejajarkan di tengah secara horizontal */
+    justify-content: center; /* Elemen disejajarkan di tengah secara vertikal */
+}
+
+/* Efek hover untuk zona unggah */
+.upload-zone:hover {
+    border-color: #8a4baf; /* Ubah warna border */
+    background: #f8f9fa; /* Ubah warna latar belakang */
+}
+
+/* Tombol unggah */
+.btn-upload {
+    background: #8a4baf; /* Warna latar belakang ungu */
+    color: white; /* Warna teks putih */
+    border: none; /* Tanpa border */
+    padding: 0.8rem 2rem; /* Padding di dalam tombol */
+    border-radius: 8px; /* Sudut membulat */
+    font-size: 1rem; /* Ukuran font */
+    font-weight: 500; /* Ketebalan font sedang */
+    transition: all 0.3s ease; /* Animasi transisi */
+    margin-top: 1rem; /* Margin atas */
+}
+
+/* Efek hover untuk tombol */
+.btn-upload:hover {
+    background: #7a3d9f; /* Warna latar belakang lebih gelap */
+    transform: translateY(-2px); /* Tombol naik sedikit */
+}
+
+/* Teks di zona unggah */
+.drag-text {
+    color: #666; /* Warna teks abu-abu */
+    margin: 1rem 0; /* Margin atas dan bawah */
+    font-size: 1.1rem; /* Ukuran font */
+}
+
+/* Bagian fitur */
+.features-section {
+    margin-top: 4rem; /* Margin atas */
+    width: 100%; /* Lebar penuh */
+}
+
+/* Grid untuk fitur */
+.features-grid {
+    display: grid; /* Menggunakan grid */
+    grid-template-columns: repeat(3, 1fr); /* Tiga kolom dengan lebar sama */
+    gap: 2rem; /* Jarak antar elemen */
+    margin-top: 2rem; /* Margin atas */
+}
+
+/* Kartu fitur */
+.feature-card {
+    background: white; /* Latar belakang putih */
+    padding: 2rem; /* Padding di dalam kartu */
+    border-radius: 15px; /* Sudut membulat */
+    text-align: left; /* Teks rata kiri */
+}
+
+/* Ikon fitur */
+.feature-icon {
+    width: 48px; /* Lebar ikon */
+    height: 48px; /* Tinggi ikon */
+    margin-bottom: 1rem; /* Margin bawah */
+    padding: 10px; /* Padding di dalam ikon */
+    background: #f0e6ff; /* Latar belakang ungu muda */
+    border-radius: 12px; /* Sudut membulat */
+}
+
+/* Judul fitur */
+.feature-title {
+    font-size: 1.2rem; /* Ukuran font */
+    font-weight: 600; /* Ketebalan font tebal */
+    margin-bottom: 0.5rem; /* Margin bawah */
+    color: #333; /* Warna teks */
+}
+
+/* Deskripsi fitur */
+.feature-description {
+    color: #666; /* Warna teks abu-abu */
+    font-size: 0.95rem; /* Ukuran font */
+    line-height: 1.5; /* Jarak antar baris */
+}
+
+/* Grid untuk gambar hasil */
+.result-images {
+    display: grid; /* Menggunakan grid */
+    grid-template-columns: 1fr 1fr; /* Dua kolom dengan lebar sama */
+    gap: 2rem; /* Jarak antar elemen */
+    margin-top: 2rem; /* Margin atas */
+    width: 100%; /* Lebar penuh */
+}
+
+/* Kontainer untuk gambar */
+.img-container {
+    background: white; /* Latar belakang putih */
+    padding: 1rem; /* Padding di dalam kontainer */
+    border-radius: 15px; /* Sudut membulat */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+}
+
+/* Judul di dalam kontainer gambar */
+.img-container h3 {
+    color: #333; /* Warna teks */
+    margin-bottom: 1rem; /* Margin bawah */
+}
+
+/* Gambar responsif */
+.img-fluid {
+    max-width: 100%; /* Lebar maksimum 100% */
+    height: auto; /* Tinggi otomatis */
+    border-radius: 8px; /* Sudut membulat */
+}
+
+/* Ikon unggah */
+.upload-icon {
+    width: 64px; /* Lebar ikon */
+    height: 64px; /* Tinggi ikon */
+    margin-bottom: 1.5rem; /* Margin bawah */
+}
+
+/* Gaya untuk footer */
+footer {
+    margin-top: auto; /* Margin atas otomatis */
+    padding: 2rem; /* Padding di dalam footer */
+    color: white; /* Warna teks putih */
+    text-align: center; /* Teks rata tengah */
+    background: rgba(0, 0, 0, 0.1); /* Latar belakang transparan */
+}
+
+/* Bagian hasil pemrosesan */
+.result-section {
+    margin-top: 4rem;
+    width: 100%;
+}
+
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.result-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.result-card h3 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.result-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+/* Grup hasil */
+.result-group {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+}
+
+.result-group-title {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.features-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
+.features-row-bottom {
+    align-items: stretch;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+    flex: 2;
+}
+
+.feature-illustration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2rem;
+    flex: 1;
+}
+
+.feature-illustration-img {
+    max-width: 320px;
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    background: #fff;
+    padding: 1.5rem;
+}
+
+@media (max-width: 1100px) {
+    .features-row, .features-row-bottom {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .feature-illustration {
+        margin-left: 0;
+        margin-top: 2rem;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 900px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.edge-section {
+    margin: 4rem auto 0 auto;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.edge-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 3rem;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    padding: 2rem 2.5rem;
+    gap: 2.5rem;
+}
+
+.edge-img {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edge-img img {
+    max-width: 320px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    background: #f8f9fa;
+}
+
+.edge-desc {
+    flex: 2;
+}
+
+.edge-desc h3 {
+    font-size: 1.5rem;
+    color: #8a4baf;
+    margin-bottom: 1rem;
+}
+
+.edge-desc p {
+    color: #444;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+    .edge-row {
+        flex-direction: column;
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+    }
+    .edge-img img {
+        max-width: 100%;
+    }
+}

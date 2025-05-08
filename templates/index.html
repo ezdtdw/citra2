@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% block title %}Perbaikan Kualitas Citra{% endblock %}
+
+{% block content %}
+<div class="main-container">
+    <div class="hero-section">
+        <h1 class="main-title">Pemrosesan Citra Digital</h1>
+    </div>
+
+    <div class="upload-card">
+        <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+            <div class="upload-zone" id="dropZone">
+                <img src="{{ url_for('static', filename='images/upload-icon.svg') }}" alt="Upload" class="upload-icon">
+                <p class="drag-text">Drag & Drop gambar di sini atau klik untuk memilih</p>
+                <input type="file" name="files[]" id="fileInput" style="display: none;" accept="image/*" multiple>
+                <button type="button" class="btn-upload" onclick="document.getElementById('fileInput').click()">Pilih File</button>
+            </div>
+        </form>
+    </div>
+
+    {% if results %}
+    <div class="result-section">
+        <h2>Hasil Pemrosesan</h2>
+        {% for result in results %}
+        <div class="result-group">
+            <h3 class="result-group-title">Gambar {{ loop.index }}</h3>
+            <div class="result-grid">
+                <div class="result-card">
+                    <h3>Gambar Asli</h3>
+                    <img src="{{ url_for('static', filename='uploads/' + result.original) }}" alt="Original" class="img-fluid">
+                </div>
+                <div class="result-card">
+                    <h3>Hasil Peningkatan Kualitas</h3>
+                    <img src="{{ url_for('static', filename='uploads/' + result.processed) }}" alt="Processed" class="img-fluid">
+                </div>
+                <div class="result-card">
+                    <h3>Deteksi Tepi Canny</h3>
+                    <img src="{{ url_for('static', filename='uploads/' + result.canny) }}" alt="Canny" class="img-fluid">
+                </div>
+                <div class="result-card">
+                    <h3>Deteksi Tepi Sobel</h3>
+                    <img src="{{ url_for('static', filename='uploads/' + result.sobel) }}" alt="Sobel" class="img-fluid">
+                </div>
+                <div class="result-card">
+                    <h3>Deteksi Tepi Laplacian</h3>
+                    <img src="{{ url_for('static', filename='uploads/' + result.laplacian) }}" alt="Laplacian" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="features-section">
+        <h2>Fitur Perbaikan Citra</h2>
+        <div class="features-row">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="{{ url_for('static', filename='images/contrast-icon.svg') }}" alt="Contrast">
+                    </div>
+                    <h3 class="feature-title">Perbaikan Kontras</h3>
+                    <p class="feature-description">Tingkatkan kontras gambar secara otomatis untuk hasil yang lebih jelas dan tajam.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="{{ url_for('static', filename='images/noise-icon.svg') }}" alt="Noise">
+                    </div>
+                    <h3 class="feature-title">Reduksi Noise</h3>
+                    <p class="feature-description">Hilangkan noise dan gangguan pada gambar untuk hasil yang lebih bersih.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="{{ url_for('static', filename='images/sharp-icon.svg') }}" alt="Sharpness">
+                    </div>
+                    <h3 class="feature-title">Peningkatan Ketajaman</h3>
+                    <p class="feature-description">Tingkatkan ketajaman detail gambar untuk hasil yang lebih profesional.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="edge-section">
+        <div class="edge-row">
+            <div class="edge-desc">
+                <h3>Deteksi Tepi Canny</h3>
+                <p>Metode deteksi tepi yang sangat sensitif dan populer untuk menemukan batas objek dengan hasil yang halus dan detail. Cocok untuk mendeteksi kontur yang jelas pada gambar.</p>
+            </div>
+            <div class="edge-img">
+                <img src="{{ url_for('static', filename='uploads/R_canny.jpg') }}" alt="Contoh Deteksi Tepi Canny">
+            </div>
+        </div>
+        <div class="edge-row">
+            <div class="edge-img">
+                <img src="{{ url_for('static', filename='uploads/R_sobel.jpg') }}" alt="Contoh Deteksi Tepi Sobel">
+            </div>
+            <div class="edge-desc">
+                <h3>Deteksi Tepi Sobel</h3>
+                <p>Menyoroti perubahan intensitas pada gambar untuk menampilkan garis tepi secara tegas dan jelas. Sangat baik untuk mendeteksi tepi horizontal dan vertikal.</p>
+            </div>
+        </div>
+        <div class="edge-row">
+            <div class="edge-desc">
+                <h3>Deteksi Tepi Laplacian</h3>
+                <p>Menghasilkan deteksi tepi dengan menyoroti area perubahan intensitas secara menyeluruh pada gambar. Cocok untuk mendeteksi tepi halus dan detail kecil.</p>
+            </div>
+            <div class="edge-img">
+                <img src="{{ url_for('static', filename='uploads/R_laplacian.jpg') }}" alt="Contoh Deteksi Tepi Laplacian">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.getElementById('fileInput').addEventListener('change', function() {
+    if (this.files.length > 0) {
+        this.form.submit();
+    }
+});
+
+const dropZone = document.getElementById('dropZone');
+
+dropZone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropZone.style.borderColor = '#8a4baf';
+    dropZone.style.background = '#f8f9fa';
+});
+
+dropZone.addEventListener('dragleave', (e) => {
+    e.preventDefault();
+    dropZone.style.borderColor = '#ddd';
+    dropZone.style.background = 'white';
+});
+
+dropZone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropZone.style.borderColor = '#ddd';
+    dropZone.style.background = 'white';
+    
+    const files = e.dataTransfer.files;
+    if (files.length > 0) {
+        document.getElementById('fileInput').files = files;
+        document.getElementById('fileInput').form.submit();
+    }
+});
+</script>
+{% endblock %}
